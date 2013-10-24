@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+  <script src="./jquery.js"></script>
+  <script src="./interpreter.js"></script>
+  <script src="./popup.js"></script>
+  <style>
+    textarea{
+      width:500px;
+      height:150px;
+    }
+    input[type='button']{
+      width:200px;
+      height:50px;
+      font-size: 20px;
+    }
+    h2{
+    margin:0px;
+    }
+  </style>
+	<title></title>
+</head>
+<body>
+<textarea id='evalTextInput'>
+</textarea>
+<br />
+<input type='button' id='evalBtn' value='Eval'/>
+<br />
+<input type="checkbox" id="echoInp" checked=""><label for="echoInp">log input</label> <br />
+<input type="checkbox" id="echoRes" checked=""><label for="echoRes">log results</label>
+<h2>result</h2>
+<div id='out'></div>
+<h2>log</h2>
+<textarea id='log'>
+</textarea>
+<br />
+<input type='button' value='clear' id='clearLogBtn'/>
+</body>
+</html>
