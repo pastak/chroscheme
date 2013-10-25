@@ -1,4 +1,4 @@
-# scheme-in-chrome
+# chroscheme
 
 Chrome拡張を利用して、Schemeを実行することができます。
 
