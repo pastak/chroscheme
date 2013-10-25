@@ -1,9 +1,13 @@
 $(function(){
-    $('#evalBtn').on('click',function(){
-        var txt = $('#evalTextInput').prop('value');
-        window.clickEval(txt);
+    window.init();
+    $('#evalButton').on('click',function(){
+        var txt = $('#txt').prop('value');
+        window.clickEval();
     });
-    $('#clearLogBtn').on('click',function(){
+    $('#clearInputButton').on('click',function(){
+        $('txt').prop('value','');
+    });
+    $('#clearLogButton').on('click',function(){
         $('#log').prop('value','');
     });
     chrome.tabs.executeScript({
@@ -12,8 +16,8 @@ $(function(){
     },function(result){
         var res = result[0];
         if(res && res.text.length > 0){
-            $('#evalTextInput').prop('value',res.text);
-            window.clickEval(res.text);
+            $('#txt').prop('value',res.text);
+            window.clickEval();
         }
     })
 })

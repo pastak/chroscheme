@@ -1,3 +1,4 @@
+
 function m(t,d) {
  // window.navigate("mailto:"+t+"@"+d);
   window.location="mailto:"+t+"@"+d;
@@ -308,7 +309,7 @@ function pairHtml() {
     }
   }
 
-  return '<table border=0 cellspacing=1 cellpadding=4>'
+  return '<table border=1 cellspacing=1 cellpadding=4>'
        + '<tr><td valign=top'+rowSpan+'>(<\/td>'
        + s1 + '<td valign=bottom'+rowSpan+'>)<\/td><\/tr>' + s2 + '<\/table>';
 //  onClick=hv(this)
@@ -1080,9 +1081,8 @@ TopEnv['gen-sym'] = function() { return getSymbol('_'+(genSymBase++)+'_'); }
 // Read-Eval-Print-Loop
 //
 
-function clickEval(txt) {
-  var /*txt = document.getElementById('txt').value,*/
-  o, res = null/*,time0=new Date()*/;
+function clickEval() {
+  var txt = document.getElementById('txt').value, o, res = null,time0=new Date();
   TopParser = new Parser( txt );
 
   while( ( o = TopParser.getObject() ) != null ) {
@@ -1095,8 +1095,8 @@ function clickEval(txt) {
       printLog( '=> ' + Str(o) );
     if( o != null ) res = o;
   }
-  //var time1 = new Date();
-  //document.getElementById('time').innerHTML = 'Elapsed: ' + ((time1-time0)/1000) + ' s';
+  var time1 = new Date();
+  document.getElementById('time').innerHTML = 'Elapsed: ' + ((time1-time0)/1000) + ' s';
   showRes(res);
   showSymbols();
 }
@@ -1494,8 +1494,13 @@ function showSymbols() {
   for( i in ShowEnv ) {
     if( i != 'parentEnv' && Env.prototype[i] == undefined ) {
       var row = tab.insertRow(0);
-      var s = '<a href="javascript:showSymbol(\''+i+'\')">'+i+'<\/a>';
-      row.insertCell(0).innerHTML = s;
+      //var s = '<a href="javascript:showSymbol(\''+i+'\')">'+i+'<\/a>';
+      //row.insertCell(0).innerHTML = s;
+      var tmp_i = i;
+      var s = $('<input type="button" value="'+i+'">').on('click', function(){
+    showSymbol(tmp_i);
+});
+      $(row.insertCell(0)).append(s);
       row.insertCell(0).innerHTML = objType(ShowEnv[i]);
     }
   }
