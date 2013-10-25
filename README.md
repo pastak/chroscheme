@@ -4,6 +4,13 @@ Chrome拡張を利用して、Schemeを実行することができます。
 
 Schemeのインタープリターは[jsScheme](http://bluishcoder.co.nz/jsscheme/)のWebサイトで使用されているものを利用しています。
 
+# install
+
+- `git clone git@github.com:pastak/chroscheme.git` or [ここからzipでダウンロード](https://github.com/pastak/chroscheme/archive/master.zip) して解凍。
+- open [chrome://extensions/](chrome://extensions/) on Google Chrome
+- `パッケージ化されてない拡張機能を読み込む`で`chroscheme`のディレクトリを選択。
+- インストール完了！！！！！
+
 # Usage
 
 - ポップアップを開いて、一番上のテキストエリアにSchemeのプログラムを入力し、`Eval`を押すと、実行結果が`Result`に、実行過程が`Log`に出力されます。
