@@ -8,6 +8,12 @@ Blog : [Schemeを実行するChrome拡張「chroscheme」を作った - Pastalab
 
 # install
 
+## From Chrome Web Store
+
+[https://chrome.google.com/webstore/detail/chroscheme/phjmhmnadabpccnocbkiafljcjajbmjf](https://chrome.google.com/webstore/detail/chroscheme/phjmhmnadabpccnocbkiafljcjajbmjf)
+
+## From Github
+
 - `git clone git@github.com:pastak/chroscheme.git` or [ここからzipでダウンロード](https://github.com/pastak/chroscheme/archive/master.zip) して解凍。
 - open [chrome://extensions/](chrome://extensions/) on Google Chrome
 - `パッケージ化されてない拡張機能を読み込む`で`chroscheme`のディレクトリを選択。
