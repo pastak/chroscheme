@@ -8,8 +8,7 @@ $(function(){
                 var value = $(this).prop('value');
                 $('textarea').css({fontSize : (value+'px')});
                 localStorage.setItem('chroSchemeFontSize',value);
-            })
-;
+            });
     for(var i = 10; i <= 90; i++){
         fontSizeSelector.append(
             $('<option>').text((i+' px')).prop('value',i).prop('selected',(localStorage.getItem('chroSchemeFontSize') == i))
@@ -30,6 +29,12 @@ $(function(){
         if(res && res.text.length > 0){
             $('#txt').prop('value',res.text);
             window.clickEval();
+        } else{
+            $('#txt').prop('value',(localStorage.getItem('lastTextareaValue')||''));
         }
+    })
+    $(window).on('unload',function(){
+        var textareaValue = $('#txt').prop('value');
+        localStorage.setItem('lastTextareaValue',textareaValue);
     })
 })
